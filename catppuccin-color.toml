@@ -1,0 +1,179 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](red)\
+$os\
+$username\
+[](bg:yellow fg:red)\
+$directory\
+[](bg:green fg:yellow)\
+$git_branch\
+$git_status\
+[](fg:green bg:peach)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:peach bg:mauve)\
+$conda\
+[](fg:mauve bg:blue)\
+$time\
+[ ](fg:blue)\
+$cmd_duration\
+$line_break\
+$character"""
+
+palette = 'catppuccin_color'
+
+[os]
+disabled = false
+style = "bg:red fg:crust"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:red fg:crust"
+style_root = "bg:red fg:crust"
+format = '[ $user]($style)'
+
+[directory]
+style = "bg:yellow fg:crust"
+format = "[ $path]($style)"
+truncation_length = 0
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:green fg:crust"
+format = '[[ $symbol $branch ](fg:crust bg:green)]($style)'
+
+[git_status]
+style = "bg:green fg:crust"
+format = '[[($all_status$ahead_behind)](fg:crust bg:green)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version) ](fg:crust bg:peach)]($style)'
+[c]
+symbol = " "
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version) ](fg:crust bg:peach)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version) ](fg:crust bg:peach)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version) ](fg:crust bg:peach)]($style)'
+
+[php]
+symbol = ""
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version) ](fg:crust bg:peach)]($style)'
+
+[java]
+symbol = " "
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version) ](fg:crust bg:peach)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version) ](fg:crust bg:peach)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version) ](fg:crust bg:peach)]($style)'
+
+[python]
+symbol = ""
+style = "bg:peach fg:crust"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:peach)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
+
+[conda]
+symbol = "🅒"
+style = "fg:crust bg:mauve"
+format = '[$symbol$environment ]($style)'
+ignore_base = false
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:blue fg:crust"
+format = '[[  $time](fg:crust bg:blue)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
+
+[palettes.catppuccin_color]
+red = "#f38ba8"
+blue = "#89b4fa"
+green = "#a1fb8e"
+yellow = "#fffe91"
+mauve = "#cba6f7"
+peach = "#fab387"
+sapphire = "#74c7ec"
+lavender = "#b4befe"
+text = "#cdd6f4"
+crust = "#11111b"
